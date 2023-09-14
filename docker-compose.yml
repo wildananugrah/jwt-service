@@ -1,17 +1,14 @@
 version: "3.1"
 
 services:
-  storage-app:
+  jwt:
     build:
       context: .
       dockerfile: ./app.Dockerfile
-    container_name: storage-app
+    container_name: jwt
     restart: always
     ports:
-      - 8010:8000
+      - 3000:3000
     environment:
       - PORT=${PORT}
       - HOST=${HOST}
-      - TMP_UPLOAD_FOLDER=${TMP_UPLOAD_FOLDER}
-    volumes:
-      - ./uploads:/app/uploads
