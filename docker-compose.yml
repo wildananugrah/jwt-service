@@ -12,3 +12,10 @@ services:
     environment:
       - PORT=${PORT}
       - HOST=${HOST}
+    networks:
+      app-net: {}
+
+networks:
+  app-net:
+    external: true
+    name: 'diudara-net'
