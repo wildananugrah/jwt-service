@@ -1,0 +1,17 @@
+version: "3.1"
+
+services:
+  storage-app:
+    build:
+      context: .
+      dockerfile: ./app.Dockerfile
+    container_name: storage-app
+    restart: always
+    ports:
+      - 8010:8000
+    environment:
+      - PORT=${PORT}
+      - HOST=${HOST}
+      - TMP_UPLOAD_FOLDER=${TMP_UPLOAD_FOLDER}
+    volumes:
+      - ./uploads:/app/uploads
