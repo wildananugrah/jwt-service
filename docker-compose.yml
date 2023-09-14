@@ -14,6 +14,8 @@ services:
       - HOST=${HOST}
     networks:
       app-net: {}
+    volumes:
+      - ./keys:/app/keys
 
 networks:
   app-net:
