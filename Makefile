@@ -3,3 +3,9 @@ compose-up:
 
 compose-down:
 	docker compose down
+
+dev-deploy:
+	make compose-down
+	make compose-up
+	git add . 
+	git commit -m "update"
