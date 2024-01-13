@@ -1,40 +1,36 @@
 import express from 'express'
-import jwt from 'jsonwebtoken'
-import fs from 'fs'
 import dotenv from 'dotenv'
+import cors from 'cors'
+import { createToken, refreshToken, validate } from './jwt.js'
 
 const app = express();
 
 dotenv.config();
 
 app.use(express.json());
+app.use(cors());
 
-async function validateToken(token) {
-    var cert = fs.readFileSync('./keys/certificate.crt')
-    return new Promise((resolve, reject) => {
-        jwt.verify(token, cert, { algorithms: ['RS256'] }, (err, decoded) => {
-            if (err) reject(err)
-            else resolve(decoded)
-        })
-    })
-}
-
-app.post('/token', (req, res) => {
-    let privateKey = fs.readFileSync('./keys/priv');
-    let expired = 60 * 60
-    let token = jwt.sign(req.body, privateKey, { algorithm: 'RS256', expiresIn: expired })
-    res.json({ token: token, expired: expired })
+app.post('/token', async (req, res) => {
+    try {
+        res.json(await createToken(req.body))
+    } catch (error) {
+        res.status(500).json({ error : error.message })
+    }
 })
 
 app.post('/validate', async (req, res) => {
-    let token = req.body.token
     try {
-        let decodedToken = await validateToken(token)
-        decodedToken.exp = new Date(decodedToken.exp * 1000)
-        decodedToken.iat = new Date(decodedToken.iat * 1000)
-        res.json({ data : decodedToken })
-    } catch (err) {
-        res.json({ error : err.message })
+        res.json({ data: await validate(req.body.token)})
+    } catch (error) {
+        res.status(500).json({ error : error.message })
+    }
+})
+
+app.post("/refresh", async (req, res) => {
+    try {
+        res.json(await refreshToken(req.body.token))
+    } catch (error) {
+        res.status(500).json({ error : error.message })
     }
 })
 

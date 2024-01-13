@@ -1,0 +1,25 @@
+@host=http://localhost:5000
+
+POST {{host}}/token
+Content-Type: application/json
+
+{
+    "username" : "wildananugrah",
+    "age" : 32
+}
+
+###
+POST {{host}}/validate
+Content-Type: application/json
+
+{
+    "token" : "eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6IndpbGRhbmFudWdyYWgiLCJhZ2UiOjMyLCJpYXQiOjE2OTc3MDEzODcsImV4cCI6MTY5NzcwNDk4N30.McAg03uSBUM-T_ayGvitRS-oyjNkBwhoWXfUbtshASp4xKC1VSYYeQw4Ct9m3jCzwHuX4pcF3kakBHfoh3d8DW1hNm2-sFxL7nhikKdnSKBPy-_AKt2NLE_gx_5-cL9tmLW1ghzMLjs9vBZirifU-YuYr9qZNOIEMsWmNcAERF2ZEj7tliipuqx9RI1UcqfG-POENe4mYv-3zEau0zU-Q9VFlofVk7a3pbFAWitUvIdeJzqbI5fzQlKXwBnhmjt2pa26aTds7WmMf2C_3h9FCSDnqh4NJd5xTNkXdjIsU-bM2bfVtwJi6B_sQooiQiOXs_cNmRRapcJHlqDCrW8OcA"
+}
+
+###
+POST {{host}}/refresh
+Content-Type: application/json
+
+{
+    "token" : "eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6IndpbGRhbmFudWdyYWgiLCJhZ2UiOjMyLCJpYXQiOjE2OTc3MDEyNTUsImV4cCI6MTY5NzcwNDg1NX0.RQxUbCDaH0rKyjcDwMSBAPwxkQqjztPrbfHxWPsVMUNRLdO0ntOSaUqYq-T8Ov_mYGnIA8ylmX94iYUm3Fg4QiAGC9-l5Lm0LXJoI1AM2Lhp2476e8SuyU2VN0Tmqe1dqw4ZEzreeXL0B1P05sv0K8nkFZu0oAjaipQ7nHAaXA-TIgSf97mrce9uJeCpjl7lrKazxoqrdGGmD_YPfkO6FGyLjqHIBMSHM9xXd0l5m9KyEpDtHoOzSiXtJVMz-mCFaZslyNOjmr-_1tOQJJxFGpsZs7X5MD5NACiGlhmrjlUdX4uW7MMqviAy-ete2soykRlaky46U-dCuijLj3wGAA"
+}

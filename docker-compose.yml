@@ -8,7 +8,7 @@ services:
     container_name: jwt
     restart: always
     ports:
-      - 3000:3000
+      - ${PORT}:${PORT}
     environment:
       - PORT=${PORT}
       - HOST=${HOST}

@@ -1,0 +1,13 @@
+Creating token...
+Response status: 200
+Response body: {'token': 'eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6IndpbGRhbmFudWdyYWgiLCJhZ2UiOjMyLCJpYXQiOjE3MDMzMDA1NzEsImV4cCI6MTcwMzMwNDE3MX0.tQRA7_3DOqo7vrV_j3k_C0MBZ-_xZoFqDlQKpA4A6mwDuxUZq45ehRLlDS04CWIm90ajmXlmRPXoFIc8sjt_KayBXysdUXQv9TNUhqYFb1t8crufnHsaxhnvD19SnRCzs5Sv_lJ-54aPfEw3uRAFPF1CkRFxXtNXbTdm87-AylFwlyFrPDQD413kbK-0uvM0ty2MtGxcWFAhN4X-rJIuKCT1Yr49RFK7sut08J-UUoeT5PJmGj44tFgj_aMsGMz6uK4LKXWLgBEK2h9H6B7ci5Fb8gxoG-er6vM6dJZ0PPVNTM3y4xrbFxTUcaHcLSngvtUs07Wt7lTNr2bFVPAuaw', 'expired': 3600}
+
+
+Validating token...
+Response status: 200
+Response body: {'data': {'username': 'wildananugrah', 'age': 32, 'iat': 1703300571, 'exp': 1703304171}}
+
+
+Refreshing token...
+Response status: 200
+Response body: {'token': 'eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6IndpbGRhbmFudWdyYWgiLCJhZ2UiOjMyLCJpYXQiOjE3MDMzMDA1NzEsImV4cCI6MTcwMzMwNDE3MX0.tQRA7_3DOqo7vrV_j3k_C0MBZ-_xZoFqDlQKpA4A6mwDuxUZq45ehRLlDS04CWIm90ajmXlmRPXoFIc8sjt_KayBXysdUXQv9TNUhqYFb1t8crufnHsaxhnvD19SnRCzs5Sv_lJ-54aPfEw3uRAFPF1CkRFxXtNXbTdm87-AylFwlyFrPDQD413kbK-0uvM0ty2MtGxcWFAhN4X-rJIuKCT1Yr49RFK7sut08J-UUoeT5PJmGj44tFgj_aMsGMz6uK4LKXWLgBEK2h9H6B7ci5Fb8gxoG-er6vM6dJZ0PPVNTM3y4xrbFxTUcaHcLSngvtUs07Wt7lTNr2bFVPAuaw', 'expired': 3600}
