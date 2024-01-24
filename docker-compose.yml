@@ -8,10 +8,10 @@ services:
     container_name: jwt
     restart: always
     ports:
-      - ${PORT}:${PORT}
+      - ${APP_PORT}:${APP_PORT}
     environment:
-      - PORT=${PORT}
-      - HOST=${HOST}
+      - APP_PORT
+      - APP_HOST
     networks:
       app-net: {}
     volumes:
@@ -20,4 +20,4 @@ services:
 networks:
   app-net:
     external: true
-    name: 'diudara-net'
+    name: 'gramwannabe-net'
