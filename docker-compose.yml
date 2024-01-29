@@ -20,4 +20,4 @@ services:
 networks:
   app-net:
     external: true
-    name: 'gramwannabe-net'
+    name: "gramwannabe-net"
